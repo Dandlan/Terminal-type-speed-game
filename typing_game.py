@@ -3,6 +3,7 @@ from curses import wrapper
 import time
 import random
 
+used_texts = set()
 
 def start_screen(stdscr):
 	stdscr.clear()
@@ -27,7 +28,15 @@ def display_text(stdscr, target, current, wpm=0):
 def load_text():
 	with open("text.txt", "r") as f:
 		lines = f.readlines()
-		return random.choice(lines).strip()
+		unused_texts = list(set(lines) - used_texts)
+		if not unused_texts:
+			used_texts.clear()
+			unused_texts = lines
+		selected_text = random.choice(unused_texts).strip()
+		used-texts.add(selected_text)
+		return selected_text
+	
+
 
 def wpm_test(stdscr):
 	target_text = load_text()
