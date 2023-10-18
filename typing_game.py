@@ -11,6 +11,7 @@ def start_screen(stdscr):
 	stdscr.refresh()
 	stdscr.getkey()
 
+
 def display_text(stdscr, target, current, wpm=0):
 	stdscr.addstr(target)
 	stdscr.addstr(1, 0, f"WPM: {wpm}")
