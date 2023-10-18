@@ -33,7 +33,7 @@ def load_text():
 			used_texts.clear()
 			unused_texts = lines
 		selected_text = random.choice(unused_texts).strip()
-		used-texts.add(selected_text)
+		used_texts.add(selected_text)
 		return selected_text
 	
 
